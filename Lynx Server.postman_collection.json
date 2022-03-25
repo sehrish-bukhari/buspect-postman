@@ -1,0 +1,2493 @@
+{
+	"info": {
+		"_postman_id": "5ed89e6b-6024-4682-9dff-e086e5393043",
+		"name": "Lynx Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Get All Students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5fa24e1eebfa3f76150080bc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Unassigned Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students/unassigned",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"unassigned"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student\": {\n        \"schoolId\": \"5fa24e1eebfa3f76150080bc\",\n        \"name\": \"Hannan\",\n        \"studentId\": \"74984327\",\n        \"dob\": \"27-09-1997\",\n        \"class\": \"XVI\",\n        \"street\": \"Badar Street\",\n        \"town\": \"Gulzar-e-Hijri\",\n        \"address\": \"House#A-22\",\n        \"parentId\": \"5fbba708d1e82500231a5ba9\",\n        \"pictures\": \"\"\n    },\n    \"parentDetails\": {\n        \"contact\": \"92740923\",\n        \"email\": \"eudaskj@gmail.com\",\n        \"name\": \"Hameed\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/students",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Attendance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentId\": \"61e908d7d88e240f2e0514a0\",\n    \"position\": \"Plot B-139\",\n    \"routeId\": \"61e90973d88e240f2e0514a2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/markAttendance",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"markAttendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Absence",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentId\": \"60aab98fc1ed0028fbd729e3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/students/markAbsence",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"students",
+								"markAbsence"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Multiple Students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"schoolId\": \"123456\",\n        \"name\": \"Maaz\",\n        \"studentId\": \"1\",\n        \"dob\": \"27-09-1997\",\n        \"class\": \"XVI\",\n        \"street\": \"Badar Street\",\n        \"town\": \"Gulzar-e-Hijri\",\n        \"address\": \"House#A-22\",\n        \"parentID\": \"1\",\n        \"pictures\": []\n    },\n    {\n        \"schoolId\": \"123456\",\n        \"name\": \"Khuzama\",\n        \"studentId\": \"1\",\n        \"dob\": \"27-09-1997\",\n        \"class\": \"XVI\",\n        \"street\": \"Badar Street\",\n        \"town\": \"Gulzar-e-Hijri\",\n        \"address\": \"House#A-22\",\n        \"parentID\": \"1\",\n        \"pictures\": []\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/multiple",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"multiple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Student Picture",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5eeb130b300953d2fc1b4957\",\n    \"file\": \"https://res.cloudinary.com/n4beel/image/upload/v1588762730/sample.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/image/single",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"image",
+								"single"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Student Pictures Multiple",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"studentId\": \"5eeb13680c0732d3d4ef9579\",\n        \"fileUrl\": \"https://res.cloudinary.com/n4beel/image/upload/v1588762730/sample.jpg\"\n    },\n    {\n        \"studentId\": \"5eeb13690c0732d3d4ef957a\",\n        \"fileUrl\": \"https://res.cloudinary.com/n4beel/image/upload/v1588762730/sample.jpg\"\n    },\n    {\n        \"studentId\": \"5eeb0d83d844b876e070ed\",\n        \"fileUrl\": \"https://res.cloudinary.com/n4beel/image/upload/v1588762730/sample.jpg\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/image/multiple",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"image",
+								"multiple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Student Details",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5eeb13680c0732d3d4ef9579\",\n    \"student\": {\n        \"schoolId\": \"123456\",\n        \"name\": \"Noor Muhammad\",\n        \"studentId\": \"1\",\n        \"dob\": \"27-09-1997\",\n        \"class\": \"XVI\",\n        \"street\": \"Badar Street\",\n        \"town\": \"Gulzar-e-Hijri\",\n        \"address\": \"House#A-22\",\n        \"parentID\": \"1\",\n        \"pictures\": [\"https://res.cloudinary.com/n4beel/image/upload/v1588762730/sample.jpg\"]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"5ef1e2608e9d693322168ea8\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Students' Histories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/history",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Student History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"studentId\": \"5ef0b49c7055f54a141d04\",\n  \"date\": \"March 23 2020\",\n  \"busNo\": \"1\",\n  \"checkIn1\": \"07:30 AM\",\n  \"checkIn2\": \"01:30 PM\",\n  \"checkOut1\": \"08:30 AM\",\n  \"checkOut2\": \"02:30 PM\",\n  \"checkIn1Position\": \"ABC St, ABC Town\",\n  \"checkIn2Position\": \"XYZ School, ABC Town\",\n  \"checkOut1Position\": \"XYZ School, ABC Town\",\n  \"checkOut2Position\": \"ABC St, ABC Town\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/history/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"history",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Student's History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5f7de291a28b040023c104b3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/history",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Children of a single parent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5f7de291a28b040023c104b3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/children",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"children"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Children of a single bus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0dc0104946f7934adbf74\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentId\": \"5fbbc92084d3a175fd59c1a7\",\n    \"position\": \"Plot B 139\",\n    \"activity\": \"Check In\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/students/sendNotification",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"students",
+								"sendNotification"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"12345678\",\n    \"FCMtoken\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/auth/login",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add School",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hello@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit School",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5fc1f73cd6d4a600236fb1a2\",\n    \"school\": {\n        \"regNo\": \"123456\",\n        \"name\": \"BCD School\",\n        \"contact\": \"0900-78601\",\n        \"ownerName\": \"Saqib\",\n        \"ownerContact\": \"0900-78602\",\n        \"town\": \"ABC Town\",\n        \"street\": \"ABC St.\",\n        \"address\": \"ABC City\",\n        \"currentPackage\": \"5ef0f7ca50acea9046f74083\",\n        \"startsOn\": \"March 12 2020\",\n        \"endsOn\": \"March 12 2021\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add School Personal Info",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"a.avjj@outlook.com\",\n    \"school\": {\n        \"regNo\": \"123456\",\n        \"name\": \"BCD School\",\n        \"contact\": \"0900-78601\",\n        \"ownerName\": \"Saqib\",\n        \"ownerContact\": \"0900-78602\",\n        \"town\": \"ABC Town\",\n        \"street\": \"ABC St.\",\n        \"address\": \"ABC City\",\n        \"currentPackage\": \"5ef0f7ca50acea9046f74083\",\n        \"startsOn\": \"March 12 2020\",\n        \"endsOn\": \"March 12 2021\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/auth/personalInfo",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"auth",
+								"personalInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hello@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/verifyEmail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"verifyEmail"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldEmail\": \"admin1@gmail.com\",\r\n    \"newEmail\": \"na268666@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/updateEmail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"updateEmail"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hello@gmail.com\",\r\n    \"OTPcode\": \"840924\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/verifyOTP",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"verifyOTP"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP New Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"na268666@gmail.com\",\r\n    \"OTPcode\": \"930343\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/verifyNewEmailOTP",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"verifyNewEmailOTP"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Set Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hello@gmail.com\",\r\n    \"password\": \"Khan@@55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/auth/setPassword",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"auth",
+								"setPassword"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"87654321\",\r\n    \"newPassword\": \"12345678\",\r\n    \"email\": \"admin@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/updatePassword",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"updatePassword"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke School",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"schoolId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/auth/revokeSchool",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"auth",
+								"revokeSchool"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Unrevoke School",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"schoolId\": \"5faf7e2d91aace8a377d6bed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/unrevokeSchool",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"unrevokeSchool"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Update School's Slots",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"schoolId\": \"5fa24e1eebfa3f76150080bc\",\r\n    \"action\": \"decrease\",\r\n    \"slots\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/updateSlots",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"updateSlots"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch All Schools",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localUrl}}/auth",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Single School",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5fc1f71dd6d4a600236fb1a1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/auth/single",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"auth",
+								"single"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5fc1f71dd6d4a600236fb1a1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Single School Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5fc1f71dd6d4a600236fb1a1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/auth/single",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"auth",
+								"single"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5fc1f71dd6d4a600236fb1a1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Panic Alert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"60aab6aa14410b277bd86897\",\n    \"bus\": \"bus 001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/auth/panic",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"auth",
+								"panic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Notifs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schoolId\": \"60aab6aa14410b277bd86897\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/auth/getAllNotifications",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"auth",
+								"getAllNotifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bus",
+			"item": [
+				{
+					"name": "Get All buses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0fa77223463942b4dc53e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bus/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bus",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Unassigned Buses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0fc67223463942b4dc540\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bus/unassigned",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bus",
+								"unassigned"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Bus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schoolId\": \"5ef0fc67223463942b4dc540\",\n    \"busNo\": \"2\",\n    \"driverId\": null,\n    \"studentCapacity\": 30,\n    \"vinNumber\": \"ABCD272s\",\n    \"assignedStudents\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bus",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Single Bus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef1cefb96fec422dfdedf4a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bus/view",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bus",
+								"view"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5eec8466a896373c20dacd\",\n    \"bus\": {\n        \"schoolId\": \"123456\",\n        \"busNo\": \"2\",\n        \"driverId\": \"\",\n        \"studentCount\": 0,\n        \"studentCapacity\": 30,\n        \"vinNumber\": \"BUS12345677\",\n        \"assignedStudents\": []\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bus",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bus",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef1cf96fec422dfdedf4c\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bus",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"busId\": \"5ef1cef6fec422dfdedf4a\",\n    \"studentId\": \"5ef1c8f3e22e0815201d6c\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bus/assign",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bus",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Driver",
+			"item": [
+				{
+					"name": "Get All drivers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0fc67223463942b4dc540\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Unassigned Drivers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/driver/unassigned",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver",
+								"unassigned"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Driver",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schoolId\": \"5ef0fc67223463942b4dc540\",\n    \"name\": \"Nabeel A Khan\",\n    \"contact\": \"0900-78601\",\n    \"email\": \"na268666@gmail.com\",\n    \"busId\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Single Driver",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5eecb05615abd6541c5daffb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver/view",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver",
+								"view"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Driver",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef337873fc17e0023ec15f4\",\n    \"driver\":\n        {\n        \"schoolId\": \"5ee8ca24311ba906108288b1\",\n        \"name\": \"Saboor Ali\",\n        \"contact\": \"0900-78601\",\n        \"email\": \"driver1@gmail.com\",\n        \"busId\": \"5ef336c23fc17e0023ec15f3\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Driver",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5eecb05615abd6541c5daffb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Drivers' Histories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef10b0d6b3ee09dd711c97a\"   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver/history",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Driver History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"driverId\": \"5ef337873fc17e0023ec15f4\",\n  \"busId\": \"5ef1cf3796fec422dfdedf4b\",\n  \"from\": \"March 2015\",\n  \"to\": \"Present\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver/history/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver",
+								"history",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Driver's History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0b49c7055f54a4d141d04\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students/history",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"na268666@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/driver/verifyEmail",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"driver",
+								"verifyEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"na268666@gmail.com\",\r\n    \"OTPcode\" : \"394887\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver/verifyOTP",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver",
+								"verifyOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"na268666@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver/setPassword",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver",
+								"setPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Driver Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"na268666@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"na268666@gmail.com\",\r\n    \"password\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/driver/verifyPassword",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"driver",
+								"verifyPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parent",
+			"item": [
+				{
+					"name": "Get All Parents",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0fa77223463942b4dc53e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add One Parent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"schoolId\": \"5ef0fa77223463942b4dc53e\",\n  \"name\": \"Xord Tester\",\n  \"email\": \"xordtester@gmail.com\",\n  \"contact\": \"03002571913\",\n  \"childrenCount\": 0,\n  \"registered\": false,\n  \"children\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Parent",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0857a69599d0a073a3518\",\n    \"parent\": {\n        \"schoolId\": \"123456\",\n        \"name\": \"Nabeel\",\n        \"email\": \"na268666@gmail.com\",\n        \"contact\": \"03330330889\",\n        \"childrenCount\": 0,\n        \"registered\": true,\n        \"children\": []\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke Parent Registration",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0857a69599d0a073a3518\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/revoke",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"revoke"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Parent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5eecb05615abd6541c5daffb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"khalid@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/verifyEmail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"verifyEmail"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Parent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"khuzama@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/getSingleParent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"getSingleParent"
+							]
+						},
+						"description": "Get Single Parent"
+					},
+					"response": []
+				},
+				{
+					"name": "Login Parent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"khuzama@gmail.com\",\r\n    \"password\": \"145231\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"syed.ar1999@gmail.com\",\r\n    \"OTPcode\": \"567205\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/verifyOTP",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"verifyOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Passowrd",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"khalid@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/setPassword",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"setPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Parent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"khalid@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"12345\",\r\n    \"newPassword\": \"123456\",\r\n    \"email\": \"khalid@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/updatePassword",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Parent Email",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"syed.ebad1999@gmail.com\",\r\n    \"newEmail\" : \"syed.ar1999@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/updateEmail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"updateEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify New Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"syed.ar1999@gmail.com\",\r\n    \"newEmail\" : \"syed.ebad1999@gmail.com\",\r\n    \"OTP\" : \"912133\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parent/verifyNewEmail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parent",
+								"verifyNewEmail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Package",
+			"item": [
+				{
+					"name": "Get All Packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/package",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"package"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Package",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Premium\",\n    \"detail\": \"More tahn 1000 Students\",\n    \"rate\": \"0.75\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/package",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"package"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "School",
+			"item": [
+				{
+					"name": "Add School",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"khuzama@gmail.com\",\n    \"regNo\": \"123456\",\n    \"name\": \"BCD School\",\n    \"contact\": \"0900-78601\",\n    \"ownerName\": \"Saqib\",\n    \"ownerContact\": \"0900-78602\",\n    \"town\": \"ABC Town\",\n    \"street\": \"ABC St.\",\n    \"address\": \"ABC City\",\n    \"currentPackage\": \"5ef0f7ca50acea9046f74083\",\n    \"startsOn\": \"March 12 2020\",\n    \"endsOn\": \"March 12 2021\",\n    \"studentCount\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/school",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"school"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All School",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/school",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"school"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One School",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0fa77223463942b4dc53e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/school/view",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"school",
+								"view"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit School",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ef0fc67223463942b4dc540\",\n    \"school\": {\n        \"email\": \"khuzama@gmail.com\",\n        \"regNo\": \"123456\",\n        \"name\": \"BCD School\",\n        \"contact\": \"0900-78601\",\n        \"ownerName\": \"Khuzama\",\n        \"ownerContact\": \"0900-78602\",\n        \"town\": \"ABC Town\",\n        \"street\": \"ABC St.\",\n        \"address\": \"ABC City\",\n        \"currentPackage\": \"5ef0f7ca50acea9046f74083\",\n        \"startsOn\": \"March 12 2020\",\n        \"endsOn\": \"March 12 2021\",\n        \"studentCount\": 0\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/school",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"school"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Super Admin",
+			"item": [
+				{
+					"name": "Super Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"bsyedaserish@gmail.com\",\n    \"password\": \"12345678\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/superAdmin/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"superAdmin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Super Admin Login Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"superadmin@gmail.com\",\n    \"password\": \"12345678\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/superAdmin/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"superAdmin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Super Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"humna-shafqat@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/superAdmin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"superAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Super Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5fae5adc867c02005aa8d6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/superAdmin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"superAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"bsyedaserish@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/superAdmin/verifyEmail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"superAdmin",
+								"verifyEmail"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"bsyedaserish@gmail.com\",\r\n    \"OTPcode\": \"490740\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/superAdmin/verifyOTP",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"superAdmin",
+								"verifyOTP"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Set Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"na268666@gmail.com\",\r\n    \"password\": \"Khan@@55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/superAdmin/setPassword",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"superAdmin",
+								"setPassword"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"na268666@gmail.com\",\r\n    \"password\": \"Hello@@00\",\r\n    \"newPassword\": \"Khan@@55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/superAdmin/updatePassword",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"superAdmin",
+								"updatePassword"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"name\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/superAdmin/updateName",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"superAdmin",
+								"updateName"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"bsyedaserish@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/superAdmin/verifyPassword",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"superAdmin",
+								"verifyPassword"
+							]
+						},
+						"description": "Verify Email"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Billing",
+			"item": [
+				{
+					"name": "Fetch Billing History of School",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schoolId\": \"5fa24e1eebfa3f76150080bc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/billing/all",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"billing",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Billing History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schoolId\": \"5fa24e1eebfa3f76150080bc\",\n    \"date\": \"12 October\",\n    \"slots\": 10,\n    \"amount\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/billing/add",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"billing",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\": \"admin@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/billing/create-customer",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"billing",
+								"create-customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"paymentMethodId\": \"pm_1HwlM9Ed1Wqjpr2S86tuRknv\",\n    \"customerId\": \"cus_IXr4AyeAxyaKxo\",\n    \"quantity\": \"600\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/billing/create-subscription",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"billing",
+								"create-subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subscriptionId\": \"sub_IYZo5dTAYczk9Z\",\n    \"customerId\": \"cus_IYZnfImhmRx9BR\",\n    \"quantity\": \"100\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localUrl}}/billing/update-subscription",
+							"host": [
+								"{{localUrl}}"
+							],
+							"path": [
+								"billing",
+								"update-subscription"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ss",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/black_trojan/Downloads/Pictures/images (2).jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://kycaml.tech/api/get_image_for_id",
+					"protocol": "http",
+					"host": [
+						"kycaml",
+						"tech"
+					],
+					"path": [
+						"api",
+						"get_image_for_id"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
